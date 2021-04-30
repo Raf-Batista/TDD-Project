@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
     @Test
-    public void handlesEmptyInput()  {
+    public void handlesEmptyInput() throws Exception {
         int expected = 0;
         int actual = Calculator.add("");
 
@@ -14,7 +14,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void handlesSingleNumber()  {
+    public void handlesSingleNumber() throws Exception {
         int expected = 1;
         int actual = Calculator.add("1");
 
@@ -22,7 +22,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void handlesDoubleNumbers()  {
+    public void handlesDoubleNumbers() throws Exception {
         int expected = 3;
         int actual = Calculator.add("1,2");
 
@@ -30,7 +30,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void handlesThreeNumbers()  {
+    public void handlesThreeNumbers() throws Exception {
         int expected = 5;
         int actual = Calculator.add("1,2,2");
 
@@ -38,7 +38,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void handlesFourNumbers() {
+    public void handlesFourNumbers() throws Exception {
         int expected = 7;
         int actual = Calculator.add("1,2,2,2");
 
@@ -46,7 +46,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void handlesNewlineDelimiter() {
+    public void handlesNewlineDelimiter() throws Exception {
         int expected = 7;
         int actual = Calculator.add("1\n2\n2\n2");
 
@@ -54,7 +54,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void handlesAnyDelimiter()  {
+    public void handlesAnyDelimiter() throws Exception {
         int expected = 7;
         int actual = Calculator.add("//;\n1;2;2;2");
 
@@ -62,7 +62,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void handlesSingleNegativeNum() {
+    public void handlesSingleNegativeNum() throws Exception {
         Exception exception = assertThrows(Exception.class, () -> {
             Calculator.add("-1");
         });
@@ -71,7 +71,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void handlesMultipleNegativeNums()  {
+    public void handlesMultipleNegativeNums() throws Exception  {
         Exception exception = assertThrows(Exception.class, () -> {
             Calculator.add("-1,-2");
         });

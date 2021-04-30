@@ -3,16 +3,16 @@ package main;
 import java.util.Arrays;
 
 public class Calculator {
-    public static int add(String num) {
+    public static int add(String num) throws Exception {
         if (num.equals("")) {
             return 0;
         }
 
         //check for negative
-//        if (num.indexOf("-") > -1) {
-//            throw new Exception(String.format("negatives not allowed %s", num));
-//        }
-        Validate valid = Validate.validate(num);
+        if (num.indexOf("-") > -1) {
+            throw new Exception(String.format("negatives not allowed %s", num));
+        }
+
 
 /*
 -find all the negatives    "-1,-2,-3"
